@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-development
+  labels:
+    app: my-development
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-development
+  template:
+    metadata:
+      labels:
+        app: my-development
+    spec:
+      containers:
+      - name: my-development
+        image: vinayakar/project-2
+        ports:
+        - containerPort: 80
